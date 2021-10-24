@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyles, { Column, ColumnTwo, Container, ContainerTwo, Row } from './globalStyles';
+import { ThemeProvider } from 'styled-components';
+
+const theme = { color: 'gray' };
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<ThemeProvider theme={theme}>
+			<GlobalStyles />
+			<Container>
+				<Row justify="center" height="500px" width="1000px">
+					<Column height="500px" width="100px" background="blue"></Column>
+					<ColumnTwo height="500px" width="100px" background="green"></ColumnTwo>
+				</Row>
+			</Container>
+		</ThemeProvider>
+	);
 }
 
 export default App;
