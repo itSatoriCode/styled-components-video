@@ -1,24 +1,23 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-const GlobalStyles = createGlobalStyle`
-  *{
-    padding:0;
-    margin:0;
-  }
-`;
-
-export const Container = styled.div`
-	min-width: 1048px;
-	background-color: ${({ theme }) => (theme.color ? theme.color : 'blue')};
-
-	> h1,
-	div {
-		color: ${({ color }) => (color ? color : 'blue')};
+const GlobalStyle = createGlobalStyle`
+	* {
+		margin:0;
+		padding: 0;
+		box-sizing: border-box;
 	}
 `;
 
-export const ContainerTwo = styled(Container)`
-	background-color: green;
+export const Container = styled.div`
+	min-width: 100%;
+	padding: 0 50px;
+	margin: 0px;
+`;
+
+export const Header = styled.h1`
+	text-align: center;
+	color: ${({ theme }) => (theme.color ? theme.color : 'red')};
+	font-size: ${({ size }) => (size ? size : '3rem')};
 `;
 
 const DEFAULT_DIV = styled.div`
@@ -41,18 +40,18 @@ const DEFAULT_DIV = styled.div`
 export const Row = styled(DEFAULT_DIV)`
 	display: flex;
 	justify-content: ${({ justify }) => (justify ? justify : '')};
+	align-items: ${({ align }) => (align ? align : '')};
+	width: 100%;
 `;
 
 export const Column = styled(DEFAULT_DIV)`
 	display: flex;
 	flex-flow: column;
 	justify-content: ${({ justify }) => (justify ? justify : '')};
+	align-items: ${({ align }) => (align ? align : '')};
+	height: 100px;
+	width: 100px;
+	color: red;
 `;
 
-export const ColumnTwo = styled(Column)`
-	@media screen and (max-width: 960px) {
-		background-color: red;
-	}
-`;
-
-export default GlobalStyles;
+export default GlobalStyle;

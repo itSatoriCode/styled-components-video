@@ -1,16 +1,17 @@
-import GlobalStyles, { Column, ColumnTwo, Container, ContainerTwo, Row } from './globalStyles';
+import GlobalStyle, { Column, Container, Header, Row } from './globalStyles';
 import { ThemeProvider } from 'styled-components';
 
-const theme = { color: 'gray' };
+const theme = { color: 'purple', size: '43px' };
 
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
-			<GlobalStyles />
+			<GlobalStyle />
 			<Container>
-				<Row justify="center" height="500px" width="1000px">
-					<Column height="500px" width="100px" background="blue"></Column>
-					<ColumnTwo height="500px" width="100px" background="green"></ColumnTwo>
+				<Header>itSatori</Header>
+				<Row background="blue" justify="center">
+					<Column margin="4rem" background="green"></Column>
+					<Column margin="4rem" background="yellow"></Column>
 				</Row>
 			</Container>
 		</ThemeProvider>
